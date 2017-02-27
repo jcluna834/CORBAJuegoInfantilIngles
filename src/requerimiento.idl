@@ -1,0 +1,51 @@
+module sop_corba {
+	interface estudianteCllbck {
+		attribute long puntos;
+		//establece la conexion entre los dos estudiantes, req: otroEstudiante debe haber iniciado el juego
+		boolean chat(in estudianteCllbck otroEstudiante);
+		
+		//actualiza la ventana del chat del estudiante
+		void actualizar();
+		
+		//envia un mensaje al chat
+		boolean sendMessage(in string mensaje);
+		
+		//obtiene un mensaje del chat
+		string getMessage();
+	};
+ 
+    interface serviciosServidor {
+		//edita una palabra del diccionario con el codigo ingresado
+		boolean modificarPalabra(in string palabraAnterior, in string palabraNueva, in long codigo);
+		
+		//borra el diccionario con dicho codigo
+		boolean borrarDiccionario(in long codigo);
+		
+		//guarda la palabra en el diccionario con el codigo ingresado
+		boolean guardarPalabra(in string palabraGuardar, in long codigo);
+		
+		//carga un diccionario desde la ubicacion ingresada y retorna el codigo del diccionario
+		long generarDiccionario(in string ubicacion);
+		
+		//obtiene una palabra de manera aleatorio entre todos los diccionarios
+		string getPalabraAletoria();
+		
+		//recibe una palabra y un codigo de palabra, retorna true si el codigo pertenece a la misma palabra ingresada
+		boolean validarImagen(in string palabra, in long codigo);
+		
+		//obtiene la palabra que pertence al codigo ingresado
+		string getPalabra(in long codigo);
+		
+		//agrega un estudiante a la lista de estudiantes ingresados
+		boolean addEstudiante(in estudianteCllbck estudiante);
+		
+		//elimina un estudiante de la lista de estudiantes ingresados
+		boolean deleteEstudiante(in estudianteCllbck estudiante);
+		
+		//busca una palabra en ingles y retorna su significado en español
+		string buscarPalabra(in string palabraIngles);
+		
+		//establece una conexion entre los estudiantes a medida que se vayan agregado al juego
+		void iniciarCompletaLetra(in estudianteCllbck estudiante);
+	};
+};

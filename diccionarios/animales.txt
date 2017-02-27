@@ -1,0 +1,9 @@
+11;dog;perro
+12;cat;gato
+13;pig;cerdo
+14;cow;vaca
+15;duck;pato
+16;duckbill;ornitorrinco
+17;butterfly;mariposa
+18;bee;abeja
+19;bear;oso

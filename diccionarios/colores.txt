@@ -1,0 +1,3 @@
+21;red;rojo
+22;green;verde
+23;blue;azul
